@@ -1,0 +1,282 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURVIVE THE EXTINCTION</title>
+    <!-- Importing scary fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rye&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0f0500;
+            --text-color: #dcb35c;
+            --accent-orange: #ff4500;
+            --blood-orange: #8a1c06;
+            --glow: #ff7b00;
+            --panel-bg: rgba(20, 10, 5, 0.95);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 50%, #2e1200 0%, #000000 90%),
+                url('https://www.transparenttextures.com/patterns/black-linen.png');
+            color: var(--text-color);
+            font-family: 'Rye', serif;
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 4px solid var(--accent-orange);
+            background-color: var(--panel-bg);
+            box-shadow: 0 0 30px var(--blood-orange), inset 0 0 80px #000;
+            padding: 40px;
+            position: relative;
+        }
+
+        /* Title Glitch Effect */
+        h1 {
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            font-size: 5rem;
+            margin: 0 0 20px 0;
+            color: var(--accent-orange);
+            text-shadow: 5px 5px 0px var(--blood-orange);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            animation: glitch 3s infinite alternate;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Special Elite', cursive;
+            color: #fff;
+            border-bottom: 2px dashed var(--blood-orange);
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        /* Survival Card Styling */
+        .dino-card {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid var(--blood-orange);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            gap: 30px;
+        }
+
+        .dino-card:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Image Styling with "Scary" Filters */
+        .dino-img {
+            flex: 0 0 250px;
+            border: 2px solid var(--text-color);
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 5px 5px 15px #000;
+        }
+
+        .dino-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Invert and contrast for x-ray/nightmare look */
+            filter: grayscale(100%) contrast(150%) brightness(0.8) sepia(100%) hue-rotate(-50deg) saturate(300%);
+            transition: filter 0.5s ease;
+        }
+
+        .dino-img:hover img {
+            filter: grayscale(0%) contrast(120%) brightness(1.1);
+        }
+
+        .dino-info {
+            flex: 1;
+        }
+
+        .dino-name {
+            font-family: 'Creepster', cursive;
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .threat-level {
+            font-family: 'Special Elite', sans-serif;
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .dino-info ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .dino-info li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            color: #ddd;
+        }
+
+        .dino-info li::before {
+            content: "☠";
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+
+        /* Wiki Links */
+        .wiki-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--blood-orange);
+            text-decoration: underline;
+            font-family: 'Special Elite', sans-serif;
+            transition: color 0.3s;
+        }
+        .wiki-link:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Animations */
+        @keyframes glitch {
+            0% { text-shadow: 5px 5px 0px var(--blood-orange); transform: skew(0deg); }
+            20% { text-shadow: -5px -5px 0px var(--blood-orange); transform: skew(-2deg); }
+            40% { text-shadow: 5px -5px 0px var(--blood-orange); transform: skew(2deg); }
+            60% { text-shadow: -5px 5px 0px var(--blood-orange); transform: skew(0deg); }
+            100% { text-shadow: 2px 2px 0px #fff; transform: skew(0deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dino-card {
+                flex-direction: column;
+            }
+            .dino-img {
+                width: 100%;
+                flex: none;
+            }
+            h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Run or Die</h1>
+        <h2>Tactical Survival Guide: Era 66 Million BC</h2>
+<iframe src="https://www.nps.gov/zion" width="700" height="700"></iframe>
+        <!-- TYRANNOSAURUS REX -->
+        <div class="dino-card">
+            <div class="dino-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Black_Beauty_Tyrannosaurus.jpg/640px-Black_Beauty_Tyrannosaurus.jpg" alt="Tyrannosaurus Rex Skull">
+            </div>
+            <div class="dino-info">
+                <h3 class="dino-name">TYRANNOSAURUS REX</h3>
+                <span class="threat-level">THREAT LEVEL: CRITICAL</span>
+                <ul>
+                    <li><strong>Vision is NOT Based on Movement:</strong> Contrary to popular myth, the T-Rex has binocular vision better than a hawk. Freezing makes you a stationary target. <em>Hide immediately.</em></li>
+                    <li><strong>Seek Dense Foliage:</strong> This apex predator is massive. It cannot navigate thick, tangled forests easily. If you hear the ground shaking, dive into the thickest brush you can find.</li>
+                    <li><strong>Do Not Outrun, Outmaneuver:</strong> You cannot outrun it (18-25 mph). However, its turn radius is terrible. Run in tight zig-zags around large trees or rocks to break its momentum.</li>
+                </ul>
+                <a href="https://en.wikipedia.org/wiki/Tyrannosaurus" target="_blank" class="wiki-link">Read Wiki File: Tyrannosaurus</a>
+            </div>
+        </div>
+
+        <!-- VELOCIRAPTOR -->
+        <div class="dino-card">
+            <div class="dino-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Velociraptor_skeleton_white_background.jpg/640px-Velociraptor_skeleton_white_background.jpg" alt="Velociraptor Skeleton">
+            </div>
+            <div class="dino-info">
+                <h3 class="dino-name">VELOCIRAPTOR</h3>
+                <span class="threat-level">THREAT LEVEL: HIGH (PACK HUNTER)</span>
+                <ul>
+                    <li><strong>Protect Your Flanks:</strong> They are ambush predators. If you see one in front of you, the attack is coming from the sides. Put your back against a wall or cliff immediately.</li>
+                    <li><strong>Intimidate, Don't Run:</strong> Running triggers their chase instinct. Stand your ground, shout, throw rocks, and make yourself look large. They prefer easy prey.</li>
+                    <li><strong>Elevate:</strong> They are excellent jumpers, but they cannot climb smooth vertical surfaces well. Get to a high roof or a sheer rock face.</li>
+                </ul>
+                <a href="https://en.wikipedia.org/wiki/Velociraptor" target="_blank" class="wiki-link">Read Wiki File: Velociraptor</a>
+            </div>
+        </div>
+
+        <!-- TRICERATOPS -->
+        <div class="dino-card">
+            <div class="dino-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Triceratops_prorsus_old_skull001.png/640px-Triceratops_prorsus_old_skull001.png" alt="Triceratops Skull">
+            </div>
+            <div class="dino-info">
+                <h3 class="dino-name">TRICERATOPS</h3>
+                <span class="threat-level">THREAT LEVEL: EXTREME (TERRITORIAL)</span>
+                <ul>
+                    <li><strong>Respect the Charge:</strong> This is not a gentle giant; it is a prehistoric rhino. If it lowers its head and paws the ground, you have seconds to move.</li>
+                    <li><strong>The Matador Defense:</strong> Do not run in a straight line away from it. Wait for the charge and dive perpendicular to its path at the last second. Its momentum prevents it from turning sharply.</li>
+                    <li><strong>Climb High:</strong> They are heavy and grounded. A tree or a large boulder is your best safety. They will not ram a large tree to get a small human.</li>
+                </ul>
+                <a href="https://en.wikipedia.org/wiki/Triceratops" target="_blank" class="wiki-link">Read Wiki File: Triceratops</a>
+            </div>
+        </div>
+
+        <!-- MOSASAURUS -->
+        <div class="dino-card">
+            <div class="dino-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Mosasaurus_hoffmannii_-_skeleton.jpg/640px-Mosasaurus_hoffmannii_-_skeleton.jpg" alt="Mosasaurus Skeleton">
+            </div>
+            <div class="dino-info">
+                <h3 class="dino-name">MOSASAURUS</h3>
+                <span class="threat-level">THREAT LEVEL: AQUATIC DEATH</span>
+                <ul>
+                    <li><strong>Stay Out of Deep Water:</strong> If you cannot see the bottom, do not enter. This leviathan senses pressure changes in the water.</li>
+                    <li><strong>The Shoreline is Safe:</strong> Unlike crocodiles, Mosasaurs are strictly marine animals. They cannot come onto land. If you are pursued, swim frantically for the shallows and beach yourself.</li>
+                    <li><strong>Avoid Surface Splashing:</strong> Thrashing on the surface mimics a wounded animal. If you must swim, use smooth, quiet strokes.</li>
+                </ul>
+                <a href="https://en.wikipedia.org/wiki/Mosasaurus" target="_blank" class="wiki-link">Read Wiki File: Mosasaurus</a>
+            </div>
+        </div>
+
+        <!-- PTERANODON -->
+        <div class="dino-card">
+            <div class="dino-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Pteranodon_longiceps_skeleton.jpg/640px-Pteranodon_longiceps_skeleton.jpg" alt="Pteranodon Skeleton">
+            </div>
+            <div class="dino-info">
+                <h3 class="dino-name">PTERANODON</h3>
+                <span class="threat-level">THREAT LEVEL: MEDIUM (AERIAL)</span>
+                <ul>
+                    <li><strong>Watch the Skies:</strong> Death comes from above. If a shadow passes over you quickly, hit the dirt immediately.</li>
+                    <li><strong>Stay Under Canopy:</strong> They require open space to dive and swoop. Dense forests or canyons with overhangs are no-fly zones for them.</li>
+                    <li><strong>Fight Back:</strong> Their bones are hollow and fragile. If one lands to peck at you, a solid strike with a heavy branch can break a wing, grounding it permanently.</li>
+                </ul>
+                <a href="https://en.wikipedia.org/wiki/Pteranodon" target="_blank" class="wiki-link">Read Wiki File: Pteranodon</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; border-top: 1px solid var(--accent-orange); padding-top: 20px; color: #666;">
+            <em>"Life finds a way... to end."</em>
+        </div>
+
+    </div>
+
+</body>
+</html>
